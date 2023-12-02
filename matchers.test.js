@@ -65,9 +65,49 @@
 // })
 
 //toBeCloseTo 匹配器  小数字相加时会有float精度问题 匹配  
-test("toBeCloseTo 匹配器",()=>{
-    var one=0.1
-    var two=0.2
-    // expect(one+two).toEqual(0.3)   // one+two=Received: 0.30000000000000004
-    expect(one+two).toBeCloseTo(0.3)
+// test("toBeCloseTo 匹配器",()=>{
+//     var one=0.1
+//     var two=0.2
+//     // expect(one+two).toEqual(0.3)   // one+two=Received: 0.30000000000000004
+//     expect(one+two).toBeCloseTo(0.3)
+// })
+
+//toMatch 匹配器  字符串 匹配  
+// test("toMatch 匹配器",()=>{
+//     var str="孙悟空，猪八戒，沙河尚"
+//     expect(str).toMatch("猪八戒，沙河尚")   //括号内填写字符串.判断str里面包不包含后面的字符串
+// })
+
+//toContain 匹配器  数组 匹配  
+// test("toContain 匹配器",()=>{
+//     var arr=["孙悟空","猪八戒","沙河尚"]
+//     expect(arr).toContain("猪八戒","沙河尚")   //括号内填写字符串.判断arr里面包不包含后面的字符串
+// })
+
+//toContain 匹配器  set 数组 匹配  
+// test("toContain 匹配器",()=>{
+//     var arr=["孙悟空","猪八戒","沙河尚"]
+//     var data =new Set(arr)
+//     expect(data).toContain("猪八戒","沙河尚")   //括号内填写字符串.判断data里面包不包含后面的字符串
+// })
+
+//**********异常 ******************************
+const throwNewError=()=>{
+    throw new Error("this is error")
+}
+//toThrow 匹配器  异常 匹配  
+// test("toThrow 匹配器",()=>{
+//     // expect(throwNewError).toThrow()   //ok
+//     expect(throwNewError).toThrow("this is error")  //错误信息要一致
+// })
+//**************end******************* */
+
+//not 是取反的作用
+const throwNewErrorNot=()=>{
+    return 1
+}
+test("toThrow.not 匹配器",()=>{
+    // expect(throwNewError).not.toThrow("this is error") //error //not 取反 就是要求不抛出异常
+    expect(throwNewErrorNot).not.toThrow() //ok //not 取反 就是要求不抛出异常
 })
+//******************************** */
