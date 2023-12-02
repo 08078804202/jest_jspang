@@ -1,0 +1,55 @@
+1.安装 
+npm install nodejs
+npm init -y
+npm install -D jest@24.8.0 (-D  安装在开发环境。 @24.8.0技术胖课要求的版本) 或 npm install -D jest （最新版）
+package.json:
+ "scripts": {
+    "test": "jest"
+  },
+
+测试运行：
+npm run test
+*********运行结果*****************
+ PASS  ./dabaojian.test.js
+  √ 保健1 300元 (2ms)
+  √ 保健1 2000                                                                                                                                                         
+                                                                                                                                                                       
+Test Suites: 1 passed, 1 total                                                                                                                                         
+Tests:       2 passed, 2 total                                                                                                                                         
+Snapshots:   0 total
+Time:        1.513s
+Ran all test suites
+******************************
+
+单元测试（单个模块）  集成测试（所有模块一起测试）
+jest初始化配置
+命令
+npx jest --init
+*******选择会话框**************
+选择1
+? Choose the test environment that will be used for testing » - Use arrow-keys. Return to submit.
+   node
+ >   jsdom (browser-like) 
+ ? Do you want Jest to add coverage reports? » (y/N) yes
+ *************************************
+ 运行后生成 jest.config.js 文件
+ 代码覆盖率生成命令：
+ npx jest --coverage
+ ******运行结果***********
+  PASS  ./dabaojian.test.js                                                                                                                                             
+  √ 保健1 300元 (2ms)
+  √ 保健1 2000                                                                                                                                                         
+                                                                                                                                                                       
+--------------|----------|----------|----------|----------|-------------------|                                                                                        
+File          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |                                                                                        
+--------------|----------|----------|----------|----------|-------------------|
+All files     |      100 |       50 |      100 |      100 |                   |
+ dabaojian.js |      100 |       50 |      100 |      100 |               2,6 |
+--------------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.528s
+Ran all test suites.
+ ******************
+ 运行后自动生成文件夹coverage，里面的index.html就是给客户看的测试覆盖率报告。
