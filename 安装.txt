@@ -65,3 +65,9 @@ Ran all test suites.
   **************jest匹配器 官网*******************
   jest匹配器 官网  https://jestjs.io/docs/expect
   *************************************************
+   导入import方式 
+   npm install @babel/core@7.4.5 @babel/preset-env@7.4.5 -D
+   添加.babelrc文件
+   ************让文件暂停测试方式******************
+   test文件会运行使用文件，如果让某些文件不用测试，可以把test变成back即可
+   dabaojian.test.js => dabaojian.back.js
